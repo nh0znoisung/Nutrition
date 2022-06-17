@@ -1,0 +1,9 @@
+h1{
+    font-weight: bold;
+    color: #0000ff;
+
+}
+
+.icon:hover{
+    cursor: pointer;
+}

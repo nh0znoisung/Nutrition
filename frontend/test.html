@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition</title>
+    <link rel="icon" href="./images/HCMUT.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap');
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            /* font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; */
+            /* font-family: GothamRnd,sans-serif!important; */
+            font-family: 'Open Sans', sans-serif;
+            
+        }
+        .header{
+            background-image: linear-gradient(#54B4EB, #1F9DE6);
+            text-align: center;
+            width: 100%;
+            display: flex;
+            font-size: 18px;
+        }
+        .nav-item{
+            background-color: linear-gradient(#54B4EB, #1F9DE6);
+        }
+        .nav-item>.nav-link{
+            min-height: 7.5vh;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            color: black;
+            font-weight: bold;
+        }
+        ul{
+            margin-bottom:0px;
+        }
+        .nav-pills > .nav-item > .active{
+            background-color: #E7E7E7;
+            color: #0795DF;
+            border-radius: 0%;
+        }
+        .container1{
+            margin-top: 20px;
+            padding: 0;
+            display: flex;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        .nav-link:hover{
+            color: #D7D43D;
+        }
+        #logo{
+            max-width: auto;
+            height: 7.5vh;
+            margin-left: 2vw;
+            margin-right: 2vw;
+            align-self: center;
+        }
+        .tab-content{
+            margin-top: 15px;
+
+        }
+        .input{
+            background-color: #F5F5F5;
+            margin: 0;
+            padding: 0;
+            border: 2px solid #E7E7E7;
+            box-shadow: 1px 1px 1px 1px #888888;
+            border-radius: 3%;
+            
+        }
+        .well{
+            padding: 20px;
+            font-weight: 600;
+        }
+        h3{
+            margin-top: 5px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+        .prediction{
+            margin-left: 3.5vw;
+            margin-right: 3.5vw;
+            min-width: 60vw;
+        }
+        .nav-tabs{
+            font-weight: bold;
+        }
+        .nav-tabs>a{
+            color: rgb(193, 40, 40);
+        }
+        .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+            /* background-color: blue; */
+            background-color: #286090;
+            color: white;
+        }
+        .nav-tabs>a:hover{
+            background-color: #E7E7E7;
+            color: #FFA500;
+        }
+        /* #E0582A */
+        .order{
+            margin: 20px 0px;
+            /* text-transform: uppercase; */
+            border: 1px solid #E7E7E7;
+            /* box-shadow: 1px 1px 1px 1px #888888; */
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .order-header{
+            display: flex;
+            justify-content: center;
+            padding: 13px 10px;
+            /* padding-left: ; */
+            color: #333333;
+            background-color: #E7E7E7;
+            margin: 0;
+        }
+        .order-food{
+            padding: 20px 30px;
+            display: flex;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(43, 158, 208);
+            margin-left: 15px;
+            margin-right: 25px;
+            border-radius: 8px;
+        }
+        .food-container{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+            <img id="logo" src="./images/HCMUT.png" alt="HCMUT Logo">
+            <li class="nav-item">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Admin</a>
+            </li>
+        </ul>
+    </div>
+
+    
+    <div class="tab-content" id="pills-tabContent">
+        <!-- Home - Prediction -->
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="container container1">
+                <div class="col-sm-4">
+                    
+                    <form class="well input">
+                        <div style="display: flex; justify-content: center; font-family: 'Roboto', sans-serif;">
+                            <h3>NHẬP THÔNG TIN</h3>
+                        </div>
+                        <div class="form-group shiny-input-container">
+                            <label for="L"> Chiều cao (cm)</label>
+                            <input type="number" id="L" class="form-control shiny-bound-input" value="165">
+                        </div>
+
+                        <div class="form-group shiny-input-container">
+                            <label for="L"> Cân nặng (kg)</label>
+                            <input type="number" id="L" class="form-control shiny-bound-input" value="60">
+                        </div>
+
+                        <div class="form-group shiny-input-container">
+                            <label for="L"> Độ tuổi</label>
+                            <input type="number" id="L" class="form-control shiny-bound-input" value="18">
+                        </div>
+
+                        <div class="form-group shiny-input-container">
+                            <label for="L"> Vấn đề sức khỏe</label>
+                            <select class="form-select form-control" aria-label="Default select example">
+                                <option selected>Không có vấn đề về sức khỏe</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group shiny-input-container">
+                            <label for="L"> Món ăn yêu thích</label>
+                            <select class="form-select form-control" aria-label="Default select example">
+                                <option selected>Bánh mỳ</option>
+                                <option value="1">Trứng</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div style="display: flex; justify-content: space-around;">
+                            <button class="btn btn-default action-button btn btn-danger shiny-bound-input" style="margin-right: 1.5vw" id="submitbutton" type="button">Đề xuất món ăn</button>
+                        </div>
+                        
+                    </form>
+                </div>
+
+                
+                <div class="prediction col-sm-10">
+                    <!-- For weekdays in Week -->
+                    <h3 style="display: flex; justify-content: center; font-family: 'Roboto', sans-serif;">KẾT QUẢ ĐỀ XUẤT MÓN ĂN DINH DƯỠNG</h3>
+                    <!-- <h5>Đề xuất món ăn thành công</h5> -->
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist" >
+                            <a class="nav-item nav-link active" id="nav-2-tab"  data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-home" aria-selected="true">Thứ 2</a>
+                            <a class="nav-item nav-link" id="nav-3-tab" data-toggle="tab" href="#nav-3" role="tab" aria-controls="nav-profile" aria-selected="false">Thứ 3</a>
+                            <a class="nav-item nav-link" id="nav-4-tab" data-toggle="tab" href="#nav-4" role="tab" aria-controls="nav-contact" aria-selected="false">Thứ 4</a>
+                            <a class="nav-item nav-link" id="nav-5-tab" data-toggle="tab" href="#nav-5" role="tab" aria-controls="nav-contact" aria-selected="false">Thứ 5</a>
+                            <a class="nav-item nav-link" id="nav-6-tab" data-toggle="tab" href="#nav-6" role="tab" aria-controls="nav-contact" aria-selected="false">Thứ 6</a>
+                            <a class="nav-item nav-link" id="nav-7-tab" data-toggle="tab" href="#nav-7" role="tab" aria-controls="nav-contact" aria-selected="false">Thứ 7</a>
+                            <a class="nav-item nav-link" id="nav-8-tab" data-toggle="tab" href="#nav-8" role="tab" aria-controls="nav-contact" aria-selected="false">Chủ nhật</a>
+                        </div>
+                    </nav>
+                    <div class="tab-content marg" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-2" role="tabpanel" aria-labelledby="nav-2-tab">
+                            <!-- GỢI Ý THỰC ĐƠN DÀNH CHO BẠN -->
+                            <p>Tổng năng lượng của thực đơn: &emsp; <b style="color:red;">2.068,1 kcal</b></p> 
+                            <!-- Cannot Download a pdf and custom it -->
+                            <!-- <button class="btn btn-default action-button shiny-bound-input" style="background-color: #e0582a" id="submitbutton" type="button">Đề xuất món ăn</button> -->
+                            <div class="order">
+                                <div class="order-header">
+                                    <p style="margin: 0px; font-size:18px; font-weight:bold;">BỮA SÁNG</p> 
+                                </div>
+                                <div class="order-food">
+                                    <!-- <img src="" alt=""> -->
+                                    <div class="box"></div>
+                                    <div class="food-container">
+                                        <p style="margin-bottom: 20px; font-size:32px; font-weight:bold; font-family: 'Roboto', sans-serif;">HỦ TIẾU</p>
+                                        <!-- <p>Tính năng bổ sung</p> -->
+                                        <ul >
+                                            <li style="margin-left: 40px;margin-bottom:10px;"><b style="margin-right: 25px;">Thời gian nấu:</b> 50 phút</li>
+                                            <li style="margin-left: 40px;margin-bottom:10px;"><b style="margin-right: 40px;">Năng lượng:</b> 435.5 kcal</li>
+                                            <li style="margin-left: 40px;margin-bottom:10px;"><b style="margin-right: 58px;">Số lượng:</b> 10kg</li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="order">
+                                <div class="order-header">
+                                    <p style="margin: 0px; font-size:18px; font-weight:bold;">BỮA TRƯA</p> 
+                                </div>
+                                <div class="order-food">
+                                    <!-- <img src="" alt=""> -->
+                                    <div class="box"></div>
+                                    <div class="food-container">
+                                        <p style="margin-bottom: 20px; font-size:32px; font-weight:bold; font-family: 'Roboto', sans-serif;">MỲ GÓI</p>
+                                        <!-- <p>Tính năng bổ sung</p> -->
+                                        <ul >
+                                            <li style="margin-left: 40px;margin-bottom:10px;"><b style="margin-right: 25px;">Thời gian nấu:</b> 50 phút</li>
+                                            <li style="margin-left: 40px;margin-bottom:10px;"><b style="margin-right: 40px;">Năng lượng:</b> 435.5 kcal</li>
+                                            <li style="margin-left: 40px;margin-bottom:10px;"><b style="margin-right: 58px;">Số lượng:</b> 10kg</li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="test"></div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-3-tab">3</div>
+                        <div class="tab-pane fade" id="nav-4" role="tabpanel" aria-labelledby="nav-4-tab">4</div>
+                        <div class="tab-pane fade" id="nav-5" role="tabpanel" aria-labelledby="nav-5-tab">5</div>
+                        <div class="tab-pane fade" id="nav-6" role="tabpanel" aria-labelledby="nav-6-tab">6</div>
+                        <div class="tab-pane fade" id="nav-7" role="tabpanel" aria-labelledby="nav-7-tab">7</div>
+                        <div class="tab-pane fade" id="nav-8" role="tabpanel" aria-labelledby="nav-8-tab">8</div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+
+        <!-- About - Team information -->
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            Đây là một trang Web làm về dự đoán dinh dưỡng
+        </div>
+
+        <!-- Adminstrator -->
+        <div class="tab-pane fade vh-80 gradient-custom"  id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <!-- <section class=""> -->
+                <div class="container py-5 h-80">
+                  <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                      <div class="card bg-dark text-white" style="border-radius: 1rem; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);">
+                        <div class="card-body p-5 text-center">
+                          <div class="mb-md-3 mt-md-4">
+                            <h2 class="fw-bold mb-2 text-uppercase" style="font-family: 'Roboto', sans-serif;">Đăng nhập</h2>
+                            <p class="text-white-50 mb-5">Hãy điền tài khoản và mật khẩu của bạn!</p>
+                            <div class="form-outline form-white mb-4">
+                              <input type="text" id="typeEmailX" class="form-control form-control-lg" placeholder="Tài khoản" />
+                            </div>
+                            <div class="form-outline form-white mb-4">
+                              <input type="password" id="typePasswordX" class="form-control form-control-lg" placeholder="Mật khẩu" />
+                            </div>
+                            
+                            <button class="btn btn-outline-light btn-lg px-5" type="submit" style="font-family: 'Roboto', sans-serif;">Đăng nhập</button>
+                            <p class="small mt-5 "><a class="text-white-50" href="#">Quên mật khẩu?</a></p>
+                          </div>
+              
+                          <!-- <div>
+                            <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a></p>
+                          </div> -->
+              
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            <!-- </section> -->
+        </div>
+    </div>
+    
+
+
+</body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function(){
+        $(".nav li").click(function(){
+            $(".nav li").removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+</script>
+</html>

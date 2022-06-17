@@ -1,0 +1,122 @@
+<style>
+    button {
+      border-radius: 20px;
+      border: 1px solid #FF4B2B;
+      background-color: #FF4B2B;
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 12px 16px;
+      letter-spacing: 0px;
+      text-transform: uppercase;
+      transition: transform 80ms ease-in;
+      position: absolute;
+      top: 335px;
+      left: 14%;
+    }
+
+
+
+    button:active {
+        transform: scale(0.95);
+    }
+
+    button:focus {
+        outline: none;
+    }
+    .btn1{
+        padding: 0px;
+    }
+    label{
+        font-weight: bold;
+    }
+</style>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" class="logo_brand">
+            <h2 style="color:aqua">HCMUT</h2>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/nguyenlieu">Nguyên liệu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/monan">Món ăn</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/nguyenlieu/add">Thêm nguyên liệu</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/monan/add">Thêm món ăn</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</header>
+
+<body>
+  <div class="container" id="container">  
+    {{!-- id: String,
+    ten: String,
+    // 13 columns
+    Nangluong: Number,
+    Protein: Number,
+    Glucid: Number,
+    Lipid: Number,
+    Xo: Number,
+    Prodv: Number,
+    Protv: Number, --}}
+
+    <nav class="navbar navbar-default">
+      <h1><b>Tạo nguyên liệu mới</h2>
+    </nav>
+    {{#if error}} <span style="color:red;font-weight:bold;">{{error}}</span>{{/if}}
+    <form method="POST" action="/nguyenlieu/add">
+      <div class="form-group">
+        <label>Tên nguyên liệu <span style="color:red;">(Không trùng)</span></label>
+        <input type="text" name="ten" class="form-control" placeholder="Cơm" >
+      </div>
+      <div class="form-group">
+        <label>Năng lượng</label>
+        <input type="number" name="Nangluong" class="form-control" placeholder="0" value="0">
+      </div>
+      <div class="form-group">
+        <label>Protein</label>
+        <input type="number" name="Protein" class="form-control" placeholder="0" value="0">
+      </div>
+      <div class="form-group">
+        <label>Glucid</label>
+        <input type="number" name="Glucid" class="form-control" placeholder="0" value="0">
+      </div>
+      <div class="form-group">
+        <label>Lipid</label>
+        <input type="number" name="Lipid" class="form-control" placeholder="0" value="0">
+      </div>
+      <div class="form-group">
+        <label>Xơ</label>
+        <input type="number" name="Xo" class="form-control" placeholder="0" value="0">
+      </div>
+      <div class="form-group">
+        <label>Protein Động vật</label>
+        <input type="number" name="Prodv" class="form-control" placeholder="0" value="0">
+      </div>
+      <div class="form-group">
+        <label>Protein Thực vật</label>
+        <input type="number" name="Protv" class="form-control" placeholder="0" value="0">
+      </div>
+      <br>
+      
+      <input type="submit" class="btn btn-primary" value="Tạo mới">
+    </form>
+    <br>
+    
+
+  </div>
+</body>
