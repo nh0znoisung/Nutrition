@@ -180,25 +180,25 @@ export default function Home() {
                             <Form.Group >
                                 <Form.Label>Số giờ nghỉ ngơi (h)</Form.Label>
                                 <Form.Control type="number" placeholder="Nhập số giờ nghỉ ngơi" defaultValue={data.nghi}
-                                onChange={e => setData({...data,  nghi: e.target.value , nang: 24-e.target.value-data.ratnhe-data.nhe-data.vua}) }/>
+                                onChange={e => setData({...data,  nghi: parseInt(e.target.value) , nang: 24-e.target.value-data.ratnhe-data.nhe-data.vua}) }/>
                             </Form.Group>
 
                             <Form.Group>
                                 <Form.Label>Làm việc rất nhẹ (h)</Form.Label>
                                 <Form.Control type="number" placeholder="Nhập số giờ làm việc rất nhẹ" defaultValue={data.ratnhe}
-                                onChange={e => setData({...data,  ratnhe: e.target.value , nang: 24-data.nghi-e.target.value-data.nhe-data.vua}) }/>
+                                onChange={e => setData({...data,  ratnhe: parseInt(e.target.value) , nang: 24-data.nghi-e.target.value-data.nhe-data.vua}) }/>
                             </Form.Group>
 
                             <Form.Group>
                                 <Form.Label>Làm việc nhẹ (h)</Form.Label>
                                 <Form.Control type="number" placeholder="Nhập số giờ làm việc nhẹ" defaultValue={data.nhe}
-                                onChange={e => setData({...data,  nhe: e.target.value , nang: 24-data.nghi-data.ratnhe-e.target.value-data.vua}) }/>
+                                onChange={e => setData({...data,  nhe: parseInt(e.target.value) , nang: 24-data.nghi-data.ratnhe-e.target.value-data.vua}) }/>
                             </Form.Group>
 
                             <Form.Group>
                                 <Form.Label>Làm việc vừa (h)</Form.Label>
                                 <Form.Control type="number" placeholder="Nhập số giờ làm việc vừa" defaultValue={data.vua}
-                                onChange={e => setData({...data,  vua: e.target.value , nang: 24-data.nghi-data.ratnhe-data.nhe-e.target.value})   }/>
+                                onChange={e => setData({...data,  vua: parseInt(e.target.value) , nang: 24-data.nghi-data.ratnhe-data.nhe-e.target.value})   }/>
                             </Form.Group>
 
                             <Form.Group>

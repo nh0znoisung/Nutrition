@@ -49,7 +49,7 @@ export const solution = async (W, H, A, a, b, c, d, e, gender, inputData) => {
     
     var BMI = W / (H*H/10000);
     
-    console.log(W, H, A, a, b, c, d, e, gender, inputData, X, X_, BMI)
+    console.log("Hello World",W, H, A, a, b, c, d, e, gender, inputData, X, X_, BMI)
 
     
     // By day => meal
